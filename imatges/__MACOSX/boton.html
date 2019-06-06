@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)https://campus.uvic.cat/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Campus Virtual | Universidad de Vic</title>
+<meta http-equiv="Expires" content="Sun, 26 Jul 1997 05:00:00 GMT">
+<meta http-equiv="Last-Modified" content="0">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link type="text/css" href="./boton_files/campus.css" rel="stylesheet">
+<link type="text/css" href="./boton_files/bootstrap.min.css" rel="stylesheet">
+<link type="text/css" href="./boton_files/bootstrap-theme.min.css" rel="stylesheet">
+
+<script type="text/javascript" src="./boton_files/jquery.min.js.descarga"></script>
+<script type="text/javascript" src="./boton_files/bootstrap.min.js.descarga"></script>
+
+<link type="text/css" href="./boton_files/jquery-ui-1.8.23.custom.css" rel="stylesheet">
+<script type="text/javascript" src="./boton_files/jquery-ui.min.js.descarga"></script>
+
+<script type="text/javascript" src="./boton_files/localize.js.descarga"></script>
+
+<script type="text/javascript">
+function checkCookie(c_name)
+{
+  if (document.cookie.length>0)
+    {
+      c_start=document.cookie.indexOf(c_name + "=")
+      if (c_start == -1)
+	return true;
+    }
+  return false;
+}
+
+var pendent = false;
+function comprovarTemps()
+{
+  if ( !pendent && checkCookie("EUVCS") )
+    {
+      pendent = true;
+      $("#temps").html('<p>Queden 120 segons per perdre la connexió amb el campus de la UVic. Vols mantenir la connexió?</p>');
+      $("#temps").dialog({
+	modal: true,
+	    resizable: false,
+	    title: "Vols mantenir la connexio?",
+	    width: 600,
+	    height: 150,
+	    buttons: {
+	    "Cancel·la": function() {
+	      $( this ).dialog( "close" );
+	      window.location="/FC.php?s=17";
+	    },
+	      "Accepta": function() {
+		$( this ).dialog( "close" );
+		document.getElementById("general").contentWindow.location.reload(true);
+	      }
+	  }
+	});
+      $(".ui-widget-header").css("background-color","#b20125");
+      $(".ui-dialog").css("font-size","10px");
+    }
+}
+setInterval("comprovarTemps()", 5000);
+</script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="nav-sigma">
+<div class="container-fluid">
+	<div class="navbar-header">
+		<a class="navbar-brand" target="general" title="Inicio" href="https://campus.uvic.cat/?s=18"><img alt="UVic-UCC" src="./boton_files/logoucc.png"></a>
+	</div>
+
+	<div>
+		<ul class="nav navbar-nav pull-right">
+			<li><a class="btn-lg" href="http://mon.uvic.cat/ajutcampus/es" target="_blank" title="Ayuda"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a></li>
+			<li><a class="btn-lg" href="https://campus.uvic.cat/?a=19" target="general" title="Preferencias"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></li>
+			<li><a class="btn-lg" href="https://campus.uvic.cat/?s=17" title="Salir"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+		</ul>
+	</div>
+
+</div>
+</nav>
+<div class="container-fluid" id="container-base">
+<div class="row" style="padding-top: 50px; height: 100%;">
+<div id="cont" class="col-sm-12 col-md-12 col-lg-12">
+<iframe name="general" id="general" frameborder="0" style="height: 100%;" src="./boton_files/saved_resource.html"></iframe>
+</div>
+</div>
+</div>
+
+
+</body></html>

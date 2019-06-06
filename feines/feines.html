@@ -7,33 +7,95 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/estil.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC" rel="stylesheet">
+    script src="../js/jquery.js"></script>
+ <script src="../js/mediaelement-and-player.js"></script>
+  <link rel="stylesheet" href="../css/mediaelementplayer.css">
+  <script src="../plugins/skip-back.js"></script>
+ <script src="../plugins/skip-back-i18n.js"></script> 
+ <link href="../plugins/skip-back.css" rel="stylesheet">
+ <script src="../plugins/speed.js"></script>
+ <script src="../plugins/speed-i18n.js"></script>
+ <link rel="stylesheet" href="../plugins/speed.css">
 </head>
 <body>
  <header>
         <input type="checkbox" id="menu">
-        <label for="menu"><img src="imatges/menu.png" id="imagen_menu" alt=""></label>
+        <label for="menu"><img src="/imatges/menu.png" id="imagen_menu" alt=""></label>
         <nav class="menu">
             <ul>
                 <li><a href="../index.html">Inici</a></li>
-                 <li><a href="../feines/feines/feines.html">Feines</a></li>
-                  <li><a href="../Curriculum/Curriculum/curriculum.html">Curriculum</a></li>
-                   <li><a href="../info/info/mesinformacio.html">Contacte</a></li>
+                 <li><a href="../feines/feines.html">Feines</a></li>
+                  <li><a href="../curriculum/curriculum.html">Curriculum</a></li>
+                   <li><a href="../info/mesinformacio.html">Contacte</a></li>
             </ul>
         </nav>
     </header>
   <div id="contenidor-general">
              
-       </div>
    <div class="container-display">
- <img class="mySlides" src="../imatges/1.jpeg" style="width:100%">
- <img class="mySlides" src="../imatges/2.jpeg" style="width:100%">
- <img class="mySlides" src="../imatges/3.jpeg" style="width:100%">
+ <img class="mySlides" id="imatge1" src="../imatges/imatge1.jpeg" style="width:70%">
+ <img class="mySlides" id="imatge2" src="../imatges/imatge2.jpeg" style="width:70%">
+ <img class="mySlides" id="imatge3" src="../imatges/imatge3.jpeg" style="width:70%">
+  <img class="mySlides" id="imatge4" src="../imatges/imatge4.jpeg" style="width:70%">
+   <img class="mySlides" id="imatge5" src="../imatges/imatge5.jpeg" style="width:70%">
+ <img class="mySlides" id="imatge6" src="../imatges/imatge6.jpeg" style="width:70%">
+ <img class="mySlides" id="imatge7" src="../imatges/imatge7.jpeg" style="width:70%">
+ <img class="mySlides" id="imatge8" src="../imatges/imatge8.jpg" style="width:70%">
+ <img class="mySlides" id="imatge9" src="../imatges/imatge%209.jpg" style="width:70%">
+ <img class="mySlides" id="imatge10" src="../imatges/imatge10.jpg" style="width:70%">
+
+
+  
+ <video class="mySlides" controls width="1080" class="wrapper" height="800" >
+
+ <source id="video1" src="../video/Videoreel.mp4" >
+
+  </video>
+  <video class="mySlides" controls width="1080" class="wrapper" height="800" >
+
+ <source id="video2" src="../video/3D.mp4" >
+
+  </video>
+</div>
+<script>
+$('video').mediaelementplayer({
+features: ['playpause', 'track', 'progress', 'skipback','speed'],
+skipBackInterval: 5,
+
+startLanguage: 'es',
+alwaysShowHours: true,
+timeFormat: 'h:mm:ss'
+    });
+</script> 
+
  <button class="boton-slider fletxaDreta-slider" onclick="plusDivs(-1)">&#10094;</button>
  <button class="boton-slider fletxaEsquerra-slider" onclick="plusDivs(1)">&#10095;</button>
- </div>
- <div id="contenidor-text">
-     <p>Aquestes fotos són dels partits que jugo amb l'equip d'amics, estem en una lliga amateur que es fa a la poblacióde Granollers</p>
- </div>   
  
+ </div>
+ <div style="color:#FFFFFF;" id="contenidor-text">
+     <p>Aquestes imatges i videos pertanyen a alguns dels treballs realitzats aquest any al curs, podem trobar imatges d'iluminació, poses d'animació, una video d'una demoreel en 2D i algun altre video d'animació 3D.</p>
+ </div>   
+        </div>
+ <script>
+ var slideIndex = 1;
+ showDivs(slideIndex);
+ function plusDivs(n) {
+ showDivs(slideIndex += n);
+ }
+ function showDivs(n) {
+ var i;
+ var x = document.getElementsByClassName("mySlides");
+ if (n > x.length) {
+ slideIndex = 1
+ }
+ if (n < 1) {
+ slideIndex = x.length
+ }
+ for (i = 0; i < x.length; i++) {
+ x[i].style.display = "none";
+ }
+ x[slideIndex - 1].style.display = "block";
+ }
+ </script>
 </body>
 </html>
