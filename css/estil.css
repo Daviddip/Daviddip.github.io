@@ -338,20 +338,20 @@ svg {
 }
 
 .text-copy:nth-child(1){
-	stroke: #4D163D;
+	stroke: #2E64FE;
 	animation-delay: -1;
     flex-wrap: wrap;
 }
 
 .text-copy:nth-child(2){
-	stroke: #840037;
+	stroke: #FF8000;
 	animation-delay: -2s;
         flex-wrap: wrap;
 
 }
 
 .text-copy:nth-child(3){
-	stroke: #BD0034;
+	stroke: #FE2EC8;
 	animation-delay: -3s;
         flex-wrap: wrap;
 
